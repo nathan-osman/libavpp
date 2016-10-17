@@ -45,6 +45,12 @@ Dictionary::Dictionary()
 {
 }
 
+Dictionary::Dictionary(const Dictionary &rhs)
+    : d(new DictionaryPrivate)
+{
+    av_dict_copy(&d->dictionary, rhs.d->dictionary, 0);
+}
+
 Dictionary::~Dictionary()
 {
     delete d;

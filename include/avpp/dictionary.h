@@ -47,6 +47,11 @@ public:
     Dictionary();
 
     /**
+     * @brief Copy constructor
+     */
+    Dictionary(const Dictionary &rhs);
+
+    /**
      * @brief Destroy the dictionary
      */
     ~Dictionary();
