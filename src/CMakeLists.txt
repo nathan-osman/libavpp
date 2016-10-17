@@ -4,6 +4,7 @@ file(GLOB HEADERS "${CMAKE_SOURCE_DIR}/include/avpp/*.h")
 set(HEADERS "${HEADERS}" "${CMAKE_CURRENT_BINARY_DIR}/avpp_global.h")
 
 set(SRC
+    dictionary.cpp
     formatcontext.cpp
 )
 
