@@ -4,7 +4,7 @@ file(GLOB HEADERS "${CMAKE_SOURCE_DIR}/include/avpp/*.h")
 set(HEADERS "${HEADERS}" "${CMAKE_CURRENT_BINARY_DIR}/avpp_global.h")
 
 set(SRC
-    context.cpp
+    formatcontext.cpp
 )
 
 add_library(avpp SHARED ${SRC})
@@ -21,6 +21,7 @@ set_target_properties(avpp PROPERTIES
 target_include_directories(avpp PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>"
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
+    "$<BUILD_INTERFACE:${FFMPEG_INCLUDE_DIRS}>"
     "$<INSTALL_INTERFACE:include}>"
 )
 

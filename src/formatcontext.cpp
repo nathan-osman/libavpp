@@ -22,12 +22,25 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef AVPP_CONTEXT_P_H
-#define AVPP_CONTEXT_P_H
+#include <avpp/formatcontext.h>
 
-class ContextPrivate
+#include "formatcontext_p.h"
+
+using namespace avpp;
+
+FormatContextPrivate::FormatContextPrivate()
+    : context(nullptr)
 {
-    //...
-};
+}
 
-#endif // AVPP_CONTEXT_P_H
+FormatContextPrivate::~FormatContextPrivate()
+{
+    if (context) {
+        avformat_free_context(context);
+    }
+}
+
+FormatContext::~FormatContext()
+{
+    delete d;
+}

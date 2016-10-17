@@ -22,21 +22,25 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef AVPP_CONTEXT_H
-#define AVPP_CONTEXT_H
+#ifndef AVPP_FORMATCONTEXT_H
+#define AVPP_FORMATCONTEXT_H
 
 #include "avpp_global.h"
 
-class AVPP_EXPORT ContextPrivate;
-class AVPP_EXPORT Context
+namespace avpp {
+
+class AVPP_EXPORT FormatContextPrivate;
+class AVPP_EXPORT FormatContext
 {
 public:
 
-    virtual ~Context();
+    virtual ~FormatContext();
 
 private:
 
-    ContextPrivate *const d;
+    FormatContextPrivate *const d;
 };
 
-#endif // AVPP_CONTEXT_H
+}
+
+#endif // AVPP_FORMATCONTEXT_H

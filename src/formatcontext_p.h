@@ -22,10 +22,23 @@
  * IN THE SOFTWARE.
  */
 
-#include <avpp/context.h>
+#ifndef AVPP_FORMATCONTEXT_P_H
+#define AVPP_FORMATCONTEXT_P_H
 
-#include "context_p.h"
+#include <libavformat/avformat.h>
 
-Context::~Context()
+namespace avpp {
+
+class FormatContextPrivate
 {
+public:
+
+    FormatContextPrivate();
+    ~FormatContextPrivate();
+
+    AVFormatContext *context;
+};
+
 }
+
+#endif // AVPP_FORMATCONTEXT_P_H
